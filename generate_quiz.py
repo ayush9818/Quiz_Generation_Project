@@ -73,43 +73,51 @@ if __name__ == "__main__":
     tokenizer = AutoTokenizer.from_pretrained(model_id)
     model = AutoModelForCausalLM.from_pretrained(model_id, torch_dtype=torch.float16)
 
-    # User Inputs
-    subject = input("Enter the subject:")
-    difficulty = input("Enter the Difficuly of the Questions:")
-    num_questions = int(input("Number of Questions:"))
-
-    # Defining HuggingFace Pipeline
-    # TODO : Put generation parameters in config
-    pipe = pipeline("text-generation", 
-                model=model, 
-                tokenizer=tokenizer,
-                device=0, 
-                max_new_tokens=2000,
-                do_sample=True, 
-                top_k=20, 
-                top_p=0.7,
-                early_stopping=True,
-                num_beams=2
-               )
-    hf = HuggingFacePipeline(pipeline=pipe)
-
-    # Creating Chain 
-    prompt_template = PromptTemplate.from_template(template)
-    chain = prompt_template | hf
-
-    print("Generating Quiz...................................")
-    generated_quiz = chain.invoke({
-        "num_questions" : num_questions,
-        "difficulty": difficulty,
-        "subject": subject
-    })
-    print(generated_quiz)
-    print("Formatting Quiz")
-
-    # TODO : Look for more Robust Formatter
-    question_formatter = QuizQuestionJSONFormatter(text_input=generated_quiz)
-    formatted_quiz = json.loads(question_formatter.format_json())
-    print(formatted_quiz)
+    print("Enter -1 to exit")
+    while True:
+        # User Inputs
+        subject = input("Enter the subject:")
+        if subject == "-1":
+            break
+        difficulty = input("Enter the Difficuly of the Questions:")
+        if difficulty == "-1":
+            break
+        num_questions = int(input("Number of Questions:"))
+        if num_questions == -1:
+            break
+            
+        # Defining HuggingFace Pipeline
+        # TODO : Put generation parameters in config
+        pipe = pipeline("text-generation", 
+                    model=model, 
+                    tokenizer=tokenizer,
+                    device=0, 
+                    max_new_tokens=2000,
+                    do_sample=True, 
+                    top_k=20, 
+                    top_p=0.7,
+                    early_stopping=True,
+                    num_beams=2
+                   )
+        hf = HuggingFacePipeline(pipeline=pipe)
+    
+        # Creating Chain 
+        prompt_template = PromptTemplate.from_template(template)
+        chain = prompt_template | hf
+    
+        print("Generating Quiz...................................")
+        generated_quiz = chain.invoke({
+            "num_questions" : num_questions,
+            "difficulty": difficulty,
+            "subject": subject
+        })
+        print(generated_quiz)
+        print("Formatting Quiz")
+    
+        # TODO : Look for more Robust Formatter
+        question_formatter = QuizQuestionJSONFormatter(text_input=generated_quiz)
+        formatted_quiz = json.loads(question_formatter.format_json())
+        print(formatted_quiz)
 
 
     
