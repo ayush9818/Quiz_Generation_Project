@@ -12,16 +12,17 @@ import re
 import sys
 
 template = """You are a KnowledgeStore which generates MCQ questions of desired difficulty on a given topic.
+You can generate really good quality questions which are different from the questions generated previously.
 
 {chat_history}
 
-Human: Generate only 1 MCQ type question which is different from previous questions for graduate students of {difficulty} difficulty level focussed on {subject}. 
+Human: Generate a single MCQ type question for graduate students of {difficulty} difficulty level focussed on {subject}. 
 The question should present a significant challenge, aligning with master's level coursework, and should ideally incorporate real-world applications or data to contextualize the mathematical or statistical concepts involved. 
 Ensure the question demand a deep understanding and application of theoretical principles, possibly involving multiple steps or the integration of several concepts.
 Ensure that Question is strictly multiple choice question with exactly 4 choices.
-Choice1, Choice2, Choice3, Choice4. The answer should definitely be one of the Choices.
+Choice1, Choice2, Choice3, Choice4
+The answer should definitely be one of the Choices.
 
-The output should strictly be in the format given below.
 {format_instructions}
 """
 
@@ -32,8 +33,9 @@ def initialize_response_schemas():
     choice2_schema = ResponseSchema(name='Choice2', description='Choice 2 for the given question')
     choice3_schema = ResponseSchema(name='Choice3', description='Choice 3 for the given question')
     choice4_schema = ResponseSchema(name='Choice4', description='Choice 4 for the given question')
-    answer_schema = ResponseSchema(name='Answer', description='One of the selected choices out of 4 choices given as the answer')
+    answer_schema = ResponseSchema(name='Answer', description='One of the selected choices out of 4 choices given as the answer. Eg Choice1')
     explanation_schema = ResponseSchema(name='Explanation', description = 'Explanation why a particular choice is selected as the answer')
+
     
     response_schemas = [question_schema, 
                         choice1_schema,
@@ -50,19 +52,6 @@ def initialize_parser(response_schemas):
     format_instructions = output_parser.get_format_instructions()
     return output_parser, format_instructions
 
-
-def format_output(llm_output, output_parser):
-    """Format the LLM Output into List format"""
-    output_response = []
-    pattern = r"```json\s+(.+?)\s+```"
-
-    # Find all matches
-    matches = re.findall(pattern, generated_quiz, re.DOTALL)
-    
-    # Print matches
-    for match in matches:
-        output_response.append(output_parser.parse(match))
-    return output_response
 
 def print_quiz(quiz):
     for question in quiz:
@@ -120,7 +109,7 @@ if __name__ == "__main__":
         pipe = pipeline("text-generation", 
                     model=model, 
                     tokenizer=tokenizer,
-                    device=4, 
+                    device=5, 
                     max_new_tokens=2000,
                     do_sample=True, 
                     top_k=20, 
@@ -147,7 +136,7 @@ if __name__ == "__main__":
                     llm=hf,
                     prompt=prompt,
                     memory=memory,
-                    verbose=True
+                    verbose=False
                 )
 
         quiz = []
@@ -162,6 +151,7 @@ if __name__ == "__main__":
         while question_num <=num_questions:
             try:
                 gen_ques = llm_chain.run(input_dict)
+                print(gen_ques)
                 gen_ques = output_parser.parse(gen_ques)
                 print(f"Question Number : {question_num} Done")
                 question_num+=1
