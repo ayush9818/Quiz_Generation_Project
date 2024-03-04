@@ -1,5 +1,7 @@
 from langchain.output_parsers import ResponseSchema
 from langchain.output_parsers import StructuredOutputParser, CommaSeparatedListOutputParser
+from langchain_community.embeddings import HuggingFaceEmbeddings, HuggingFaceBgeEmbeddings
+from langchain_community.vectorstores import Chroma
 import json
 import re
 import sys
@@ -16,7 +18,6 @@ def print_quiz(quiz):
         print(f"Explanation:{question.get('Explanation')}")
         print()
 
-
 def initialize_response_schemas():
     """Initialises response schemas for StructuredOutputParser"""
     question_schema = ResponseSchema(name='Question', description="Question Generated on the given topic")
@@ -24,7 +25,8 @@ def initialize_response_schemas():
     choice2_schema = ResponseSchema(name='Choice2', description='Choice 2 for the given question')
     choice3_schema = ResponseSchema(name='Choice3', description='Choice 3 for the given question')
     choice4_schema = ResponseSchema(name='Choice4', description='Choice 4 for the given question')
-    answer_schema = ResponseSchema(name='Answer', description='One of the selected choices out of 4 choices given as the answer. Eg Choice1')
+    #answer_schema = ResponseSchema(name='Answer', description='One of the selected choices out of 4 choices given as the answer. Eg Choice1')
+    answer_schema = ResponseSchema(name='Answer', description='Correct Answer to the Question: Answer Format => Choice 1 or Choice 2 or Choice 3 or Choice 4')
     explanation_schema = ResponseSchema(name='Explanation', description = 'Explanation why a particular choice is selected as the answer')
 
     
@@ -37,6 +39,23 @@ def initialize_response_schemas():
                         explanation_schema]
     return response_schemas
 
+
+def retrieve_choice(choice_list, query):
+    model_kwargs = {'device': 'cpu'}
+    db = Chroma.from_texts(choice_list, HuggingFaceBgeEmbeddings(model_kwargs=model_kwargs))
+    return db.similarity_search(query)[0].page_content.split(':')[0]
+
+
+def align_answers(quiz):
+    aligned_quiz = []
+    for question in quiz:
+        choice_list = [f"{key}:{value}" for key,value in question.items() if 'choice' in key.lower()]
+        query = f"Answer:{question['Answer']}"
+        question['Original Answer'] = question['Answer']
+        question['Answer'] = retrieve_choice(choice_list, query)
+        aligned_quiz.append(question)
+    return aligned_quiz
+    
 def initialize_parser(response_schemas):
     """Initialise output parser and create format instructions for LLM"""
     output_parser = StructuredOutputParser.from_response_schemas(response_schemas)
@@ -54,6 +73,7 @@ def write_quiz_to_file(quiz, file_path):
             f.write(f"Choice3:{question.get('Choice3')}\n")
             f.write(f"Choice4:{question.get('Choice4')}\n")
             f.write(f"Answer:{question.get('Answer')}\n")
+            f.write(f"Original Answer:{question.get('Original Answer')}\n")
             f.write(f"Explanation:{question.get('Explanation')}")
             f.write("\n\n")
             

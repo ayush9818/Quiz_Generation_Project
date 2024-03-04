@@ -3,7 +3,7 @@ from transformers import AutoModelForCausalLM, AutoTokenizer, pipeline, Generati
 import torch
 from langchain.prompts import PromptTemplate
 from langchain.chains import LLMChain
-from utils import print_quiz, initialize_response_schemas, initialize_parser, Memory, write_quiz_to_file
+from utils import print_quiz, initialize_response_schemas, initialize_parser, Memory, write_quiz_to_file, align_answers
 import argparse
 from loguru import logger
 
@@ -34,6 +34,7 @@ if __name__ == "__main__":
     args = parser.parse_args()
     mode = args.role
     file_path = args.file_path
+    num_retries = args.num_retries
     logger.info(f"Mode : {mode}")
 
     
@@ -123,10 +124,11 @@ if __name__ == "__main__":
                 logger.info(f"Error : {e}")
                 logger.info("Retrying")
                 retry+=1
-                if retry == 3:
+                if retry == num_retries:
                     logger.info("Error Occured! Stopping")
                     break
         if mode == 'teacher':
+            quiz = align_answers(quiz)
             write_quiz_to_file(quiz, file_path)
     
 
