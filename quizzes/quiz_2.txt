@@ -1,0 +1,43 @@
+Subject : Project Management Theory
+Difficulty: Easy
+
+Question 1:In Agile Project Management, which Scrum event is dedicated to reviewing the progress of the project and planning for the next Sprint?
+Choice1:Sprint Planning
+Choice2:Sprint Review
+Choice3:Daily Scrum
+Choice4:Sprint Retrospective
+Answer:Choice2
+Explanation:Sprint Review is the event where the progress of the project is reviewed and plans for the next Sprint are made.
+
+Question 2:Which Agile methodology emphasizes on delivering a potentially shippable product at the end of each Sprint?
+Choice1:Scrum
+Choice2:Kanban
+Choice3:Extreme Programming (XP)
+Choice4:Feature Driven Development (FDD)
+Answer:Choice1
+Explanation:Scrum methodology emphasizes on delivering a potentially shippable product at the end of each Sprint.
+
+Question 3:Which project management tool is best suited for managing large and complex projects?
+Choice1:Microsoft Project
+Choice2:Asana
+Choice3:Trello
+Choice4:Jira
+Answer:Choice4
+Explanation:Jira is best suited for managing large and complex projects due to its advanced features and scalability.
+
+Question 4:Which Agile methodology is best suited for projects with frequent changes and customer feedback?
+Choice1:Scrum
+Choice2:Kanban
+Choice3:Extreme Programming (XP)
+Choice4:Feature Driven Development (FDD)
+Answer:Choice2
+Explanation:Kanban methodology is best suited for projects with frequent changes and customer feedback due to its flexibility and continuous delivery approach.
+
+Question 5:Which Agile methodology is best suited for projects with a high degree of uncertainty and frequent changes?
+Choice1:Waterfall
+Choice2:Scrum
+Choice3:Kanban
+Choice4:Extreme Programming (XP)
+Answer:Choice3
+Explanation:Kanban methodology is best suited for projects with a high degree of uncertainty and frequent changes due to its flexibility and continuous delivery approach.
+

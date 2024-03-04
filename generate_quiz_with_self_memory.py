@@ -3,8 +3,9 @@ from transformers import AutoModelForCausalLM, AutoTokenizer, pipeline, Generati
 import torch
 from langchain.prompts import PromptTemplate
 from langchain.chains import LLMChain
-from utils import print_quiz, initialize_response_schemas, initialize_parser, Memory
+from utils import print_quiz, initialize_response_schemas, initialize_parser, Memory, write_quiz_to_file
 import argparse
+from loguru import logger
 
 template = """You are a KnowledgeStore which generates MCQ questions of desired difficulty on a given topic.
 You can generate really good quality questions which are different from the questions generated previously.
@@ -16,8 +17,7 @@ Human: Generate a single MCQ type question of {difficulty} difficulty level focu
 The question should be totally different from previous generated quesions mentioned above.
 The question should present a significant challenge, and should ideally incorporate real-world applications or data to contextualize the mathematical or statistical concepts involved. 
 Ensure the question demand a deep understanding and application of theoretical principles, possibly involving multiple steps or the integration of several concepts.
-Ensure that Question is strictly multiple choice question with exactly 4 choices. 
-Choice1, Choice2, Choice3, Choice4. The answer should definitely be one of the Choices.
+Ensure that Question is strictly multiple choice question with exactly 4 choices which are Choice1, Choice2, Choice3, Choice4. The answer should definitely be one of the Choices.
 It is essential to make sure you generate a single question even if you are not able to meet all the requirments.
 You can ignore other requirements if not met but it is compulsory to be a single MCQ question with 4 Choices.
 
@@ -28,24 +28,29 @@ Output:
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='Quiz Generation Module')
     parser.add_argument("--role", type=str, default='teacher')
+    parser.add_argument("--file-path" , type=str)
+    parser.add_argument("--num-retries" , type=int, default=5)
 
     args = parser.parse_args()
     mode = args.role
+    file_path = args.file_path
+    logger.info(f"Mode : {mode}")
 
+    
     # Load the Mistral Model 
-    print("Loading Model")
+    logger.info("Loading Model")
     model_id = "mistralai/Mistral-7B-Instruct-v0.2"
     tokenizer = AutoTokenizer.from_pretrained(model_id)
     model = AutoModelForCausalLM.from_pretrained(model_id, torch_dtype=torch.float16)
 
-    print("Initializing Output Parser")
+    logger.info("Initializing Output Parser")
     response_schemas = initialize_response_schemas()
     output_parser, format_instructions = initialize_parser(response_schemas)
 
     # Initialize Memory 
     memory = Memory()
 
-    print("Enter -1 to exit")
+    logger.info("Enter -1 to exit")
     while True:
         # User Inputs
         subject = input("Enter the subject:")
@@ -58,6 +63,8 @@ if __name__ == "__main__":
         if num_questions == -1:
             break
             
+        with open(file_path,'w') as f:
+            f.write(f"Subject : {subject}\nDifficulty: {difficulty}\n\n")
         # Defining HuggingFace Pipeline
         # TODO : Put generation parameters in config
         pipe = pipeline("text-generation", 
@@ -95,8 +102,8 @@ if __name__ == "__main__":
         retry = 0
         while question_num <=num_questions:
             try:
-                print(f"Question Number: {question_num}")
-                print(f"Chat History : {memory.chat_history}")
+                logger.info(f"Question Number: {question_num}")
+                logger.info(f"Chat History : {memory.chat_history}")
                 input_dict = {
                     "chat_history" : memory.chat_history,
                     "difficulty" : difficulty,
@@ -112,15 +119,15 @@ if __name__ == "__main__":
                     quiz.append(gen_ques)
                 retry=0
             except Exception as e:
-                print(f"Failed to Generate Question Number : {question_num}")
-                print(f"Error : {e}")
-                print("Retrying")
+                logger.info(f"Failed to Generate Question Number : {question_num}")
+                logger.info(f"Error : {e}")
+                logger.info("Retrying")
                 retry+=1
                 if retry == 3:
-                    print("Error Occured! Stopping")
+                    logger.info("Error Occured! Stopping")
                     break
         if mode == 'teacher':
-            print_quiz(quiz)
+            write_quiz_to_file(quiz, file_path)
     
 
     

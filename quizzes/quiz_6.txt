@@ -1,0 +1,123 @@
+Subject : War History of India with Pakistan
+Difficulty: Easy
+
+Question 1:Which event marked the beginning of the Indo-Pakistani War of 1971?
+Choice1:The Rann of Kutch dispute in 1965
+Choice2:The Bangladesh Liberation War in 1971
+Choice3:The Kashmir War in 1947
+Choice4:The Goa Crisis in 1961
+Answer:Choice2
+Explanation:The Bangladesh Liberation War in 1971 marked the beginning of the Indo-Pakistani War of 1971.
+
+Question 2:Which battle during the Indo-Pakistani War of 1947 resulted in the largest number of prisoners of war being taken by India?
+Choice1:The Battle of Hyderabad
+Choice2:The Battle of Lahore
+Choice3:The Battle of Kashmir
+Choice4:The Battle of Amritsar
+Answer:Choice2
+Explanation:The Battle of Lahore resulted in the largest number of prisoners of war being taken by India during the Indo-Pakistani War of 1947.
+
+Question 3:Which of the following battles during the Indo-Pakistani Wars resulted in the highest number of ceasefire violations?
+Choice1:Battle of Longewala
+Choice2:Battle of Badr
+Choice3:Battle of Tangdhar
+Choice4:Battle of Kargil
+Answer:Choice1
+Explanation:The Battle of Longewala, fought during the Indo-Pakistani War of 1971, holds the record for the highest number of ceasefire violations. This battle took place in the Rann of Kutch region and lasted for 18 days. Despite being outnumbered, the Indian forces managed to hold their ground and inflict heavy casualties on the Pakistani forces.
+
+Question 4:Which of the following battles during the Indo-Pakistani Wars took place in the coldest month?
+Choice1:Battle of Longewala (December 1971)
+Choice2:Battle of Badrinath (September 1947)
+Choice3:Battle of Asal Uttar (November 1965)
+Choice4:Battle of Tangdhar (February 1948)
+Answer:Choice1
+Explanation:The Battle of Longewala took place in the Rann of Kutch desert in December 1971, making it the coldest battle between India and Pakistan.
+
+Question 5:Which of the following battles during the Indo-Pakistani Wars took place closest to the Arabian Sea?
+Choice1:The Battle of Longewala
+Choice2:The Battle of Basantar
+Choice3:The Battle of Tangdhar
+Choice4:The Battle of Asal Uttar
+Answer:Choice1
+Explanation:The Battle of Longewala is the closest battle to the Arabian Sea among the given options.
+
+Question 6:Which of the following battles during the Indo-Pakistani Wars was the shortest in duration?
+Choice1:Battle of Longewala
+Choice2:Battle of Badr
+Choice3:Battle of Kargil
+Choice4:Battle of Tipu Sultan
+Answer:Choice1
+Explanation:The Battle of Longewala was the shortest battle in the Indo-Pakistani Wars, lasting only a few hours.
+
+Question 7:Which of the following battles during the Indo-Pakistani Wars was the first to involve the use of helicopters in combat?
+Choice1:Battle of Longewala
+Choice2:Battle of Tangdhar
+Choice3:Battle of Asal Uttar
+Choice4:Battle of Kargil
+Answer:Choice2: Battle of Tangdhar
+Explanation:The Battle of Tangdhar in 1948 was the first recorded use of helicopters in combat between India and Pakistan.
+
+Question 8:In which year did India and Pakistan sign the Tashkent Declaration, ending the 1965 war?
+Choice1:1964
+Choice2:1966
+Choice3:1967
+Choice4:1965
+Answer:Choice4
+Explanation:The Tashkent Declaration was signed on January 10, 1965, bringing an end to the 1965 Indo-Pakistani War.
+
+Question 9:Which Indian military leader was awarded the Victoria Cross, the highest military decoration, during the Indo-Pakistani Wars?
+Choice1:Sam Manekshaw
+Choice2:Jagjit Singh Aurora
+Choice3:Mohammad Musa
+Choice4:Pran Nath Thapar
+Answer:Sam Manekshaw
+Explanation:Sam Manekshaw is the only Indian military officer to have been awarded the Victoria Cross during the Indo-Pakistani Wars.
+
+Question 10:Which Indian military leader was the first to use tanks in the Indo-Pakistani Wars?
+Choice1:General K.M. Cariappa
+Choice2:General J.N. Chaudhuri
+Choice3:General S.H.F.J. Manekshaw
+Choice4:General M.S. Thimayya
+Answer:Choice3
+Explanation:General S.H.F.J. Manekshaw was the first Indian military leader to use tanks in the Indo-Pakistani Wars during the Battle of Burki in 1965.
+
+Question 11:Which Indian military leader was the first to use artillery in the Indo-Pakistani Wars?
+Choice1:General K.M. Cariapa
+Choice2:General J.N. Chaudhuri
+Choice3:General S.H.F.J. Manekshaw
+Choice4:General Arjun Singh
+Answer:Choice1
+Explanation:General K.M. Cariapa was the first Indian military leader to use artillery in the Indo-Pakistani Wars.
+
+Question 12:Which Indian military leader was the first to use radio communication extensively during the Indo-Pakistani Wars?
+Choice1:Sam Manekshaw
+Choice2:Jagjit Singh Aurora
+Choice3:M.S. Thimmayya
+Choice4:Pran Nath Thapar
+Answer:Jagjit Singh Aurora
+Explanation:Jagjit Singh Aurora was the first Indian military leader to use radio communication extensively during the Indo-Pakistani Wars. He used this technology to coordinate troops and provide real-time information, giving him a significant tactical advantage.
+
+Question 13:Which Indian military leader was the first to use unmanned aerial vehicles (UAVs) in the Indo-Pakistani Wars?
+Choice1:Sam Manekshaw
+Choice2:Jagjit Singh Aurora
+Choice3:Arjun Ram Vohra
+Choice4:Pran Nath Thapar
+Answer:Jagjit Singh Aurora
+Explanation:Jagjit Singh Aurora was the first Indian military leader to use unmanned aerial vehicles (UAVs) in the Indo-Pakistani Wars. UAVs were used for reconnaissance and intelligence gathering, providing valuable information to the Indian forces.
+
+Question 14:Which Indian military leader was the first to introduce the use of camels in the Indo-Pakistani Wars?
+Choice1:Sam Manekshaw
+Choice2:Akbar Khan
+Choice3:Jagjit Singh Aurora
+Choice4:M.S. Thimmayya
+Answer:Akbar Khan
+Explanation:Akbar Khan was the first Indian military leader to introduce the use of camels in the Indo-Pakistani Wars for transportation and reconnaissance purposes.
+
+Question 15:Which of the following Indian military leaders played a significant role in the planning and execution of the Operation Cactus Lily, the military intervention in Maldives in 1988?
+Choice1:Sam Manekshaw
+Choice2:Arjun Singh
+Choice3:Jagjit Singh Arora
+Choice4:Pranab Mukherjee
+Answer:Jagjit Singh Arora
+Explanation:Jagjit Singh Arora was the Indian High Commissioner to Maldives at the time of Operation Cactus Lily and played a significant role in its planning and execution.
+

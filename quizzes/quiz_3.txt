@@ -1,0 +1,51 @@
+Subject : Accounting Theory
+Difficulty: Easy
+
+Question 1:Which accounting equation describes the relationship between a company's assets, liabilities, and equity?
+Choice1:Assets = Liabilities + Equity
+Choice2:Liabilities = Assets + Equity
+Choice3:Assets = Equity - Liabilities
+Choice4:Equity = Assets - Liabilities
+Answer:Choice1
+Explanation:The accounting equation states that the total value of assets equals the total value of liabilities and equity. Therefore, the correct answer is 'Assets = Liabilities + Equity'.
+
+Question 2:Which of the following accounting principles requires that a company records a transaction at its fair value at the time of the transaction?
+Choice1:Principle of Consistency
+Choice2:Principle of Revenue Recognition
+Choice3:Principle of Matching
+Choice4:Principle of Full Disclosure
+Answer:Choice1: Principle of Fair Value
+Explanation:The Principle of Fair Value requires that a company records a transaction at its fair value at the time of the transaction. This principle is also known as the Principle of Recognition and Measurement.
+
+Question 3:Which accounting theory states that transactions are recorded in the financial statements based on their economic substance rather than their legal form?
+Choice1:Modified Accrual Basis
+Choice2:Generally Accepted Accounting Principles (GAAP)
+Choice3:Matching Principle
+Choice4:Revenue Recognition Principle
+Answer:Matching Principle
+Explanation:The Matching Principle requires that revenues and expenses be recorded in the same period in which they are earned and incurred, respectively. This means that transactions are recorded based on their economic substance rather than their legal form.
+
+Question 4:Which accounting theory states that a company's financial statements should reflect the substance of a transaction rather than its legal form, even if the legal form is different from the economic substance?
+Choice1:Modified Accrual Accounting
+Choice2:Generally Accepted Accounting Principles (GAAP)
+Choice3:Fair Value Accounting
+Choice4:Matching Principle
+Answer:Choice 2
+Explanation:GAAP requires transactions to be recorded based on their economic substance rather than their legal form.
+
+Question 5:Which accounting theory states that a company's financial statements should reflect the current value of its assets and liabilities?
+Choice1:Historical Cost Theory
+Choice2:Market Value Theory
+Choice3:Dual Aspect Theory
+Choice4:Matching Principle
+Answer:Choice2
+Explanation:Market Value Theory requires that a company's financial statements reflect the current value of its assets and liabilities.
+
+Question 6:Which accounting theory allows a company to recognize a revenue before it has been earned?
+Choice1:Matching Principle
+Choice2:Revenue Recognition Principle
+Choice3:Going Concern Principle
+Choice4:Consistency Principle
+Answer:Revenue Recognition Principle
+Explanation:The Revenue Recognition Principle allows a company to recognize revenue before it has been earned, as long as the revenue is realizable and the earnings process is complete or virtually complete.
+

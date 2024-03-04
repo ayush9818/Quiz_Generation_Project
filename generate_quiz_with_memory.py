@@ -3,67 +3,33 @@ from transformers import AutoModelForCausalLM, AutoTokenizer, pipeline, Generati
 import torch
 from langchain.prompts import PromptTemplate
 from langchain.chains import LLMChain
-from langchain.output_parsers import ResponseSchema
-from langchain.output_parsers import StructuredOutputParser, CommaSeparatedListOutputParser
 from langchain.memory import ConversationBufferMemory,ConversationSummaryMemory, ConversationBufferWindowMemory
+
+import argparse
+from utils import initialize_response_schemas, initialize_parser, print_quiz, write_quiz_to_file
 import json
 import re
-
+from loguru import logger
 import sys
 
 template = """You are a KnowledgeStore which generates MCQ questions of desired difficulty on a given topic.
 You can generate really good quality questions which are different from the questions generated previously.
 
+Previously Generated Questions.
 {chat_history}
 
-Human: Generate a single MCQ type question for graduate students of {difficulty} difficulty level focussed on {subject}. 
-The question should present a significant challenge, aligning with master's level coursework, and should ideally incorporate real-world applications or data to contextualize the mathematical or statistical concepts involved. 
+Human: Generate a single MCQ type question of {difficulty} difficulty level focussed on {subject}.
+The question should be totally different from previous generated quesions mentioned above.
+The question should present a significant challenge, and should ideally incorporate real-world applications or data to contextualize the mathematical or statistical concepts involved. 
 Ensure the question demand a deep understanding and application of theoretical principles, possibly involving multiple steps or the integration of several concepts.
-Ensure that Question is strictly multiple choice question with exactly 4 choices.
-Choice1, Choice2, Choice3, Choice4
-The answer should definitely be one of the Choices.
+Ensure that Question is strictly multiple choice question with exactly 4 choices. 
+Choice1, Choice2, Choice3, Choice4. The answer should definitely be one of the Choices.
+It is essential to make sure you generate a single question even if you are not able to meet all the requirments.
+You can ignore other requirements if not met but it is compulsory to be a single MCQ question with 4 Choices.
 
 {format_instructions}
+Output:
 """
-
-def initialize_response_schemas():
-    """Initialises response schemas for StructuredOutputParser"""
-    question_schema = ResponseSchema(name='Question', description="Question Generated on the given topic")
-    choice1_schema = ResponseSchema(name='Choice1', description='Choice 1 for the given question')
-    choice2_schema = ResponseSchema(name='Choice2', description='Choice 2 for the given question')
-    choice3_schema = ResponseSchema(name='Choice3', description='Choice 3 for the given question')
-    choice4_schema = ResponseSchema(name='Choice4', description='Choice 4 for the given question')
-    answer_schema = ResponseSchema(name='Answer', description='One of the selected choices out of 4 choices given as the answer. Eg Choice1')
-    explanation_schema = ResponseSchema(name='Explanation', description = 'Explanation why a particular choice is selected as the answer')
-
-    
-    response_schemas = [question_schema, 
-                        choice1_schema,
-                        choice2_schema,
-                        choice3_schema,
-                        choice4_schema,
-                        answer_schema,
-                        explanation_schema]
-    return response_schemas
-
-def initialize_parser(response_schemas):
-    """Initialise output parser and create format instructions for LLM"""
-    output_parser = StructuredOutputParser.from_response_schemas(response_schemas)
-    format_instructions = output_parser.get_format_instructions()
-    return output_parser, format_instructions
-
-
-def print_quiz(quiz):
-    for question in quiz:
-        print(f"Question:{question.get('Question')}")
-        print(f"Choice1:{question.get('Choice1')}")
-        print(f"Choice2:{question.get('Choice2')}")
-        print(f"Choice3:{question.get('Choice3')}")
-        print(f"Choice4:{question.get('Choice4')}")
-        print(f"Answer:{question.get('Answer')}")
-        print(f"Explanation:{question.get('Explanation')}")
-        print()
-    
 
 if __name__ == "__main__":
 
@@ -76,22 +42,29 @@ if __name__ == "__main__":
     # Pydentic to return response 
     # https://python.langchain.com/docs/modules/model_io/output_parsers/types/pydantic
     """
-    
-    mode = sys.argv[1]
-    MEMORY_BUFFER=5
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--mode", type=str, default='teacher')
+    parser.add_argument("--memory-buffer" , type=int, default=40)
+    parser.add_argument("--file-path" , type=str)
+    args = parser.parse_args()
+
+    mode = args.mode
+    memory_buffer = args.memory_buffer
+    file_path = args.file_path
+    logger.info(f"Mode : {mode}, Memory Buffer : {memory_buffer}")
     assert mode in ('teacher', 'student')
     
     # Load the Mistral Model 
-    print("Loading Model")
+    logger.info("Loading Model")
     model_id = "mistralai/Mistral-7B-Instruct-v0.2"
     tokenizer = AutoTokenizer.from_pretrained(model_id)
     model = AutoModelForCausalLM.from_pretrained(model_id, torch_dtype=torch.float16)
 
-    print("Initializing Output Parser")
+    logger.info("Initializing Output Parser")
     response_schemas = initialize_response_schemas()
     output_parser, format_instructions = initialize_parser(response_schemas)
     
-    print("Enter -1 to exit")
+    logger.info("Enter -1 to exit")
     while True:
         # User Inputs
         subject = input("Enter the subject:")
@@ -103,7 +76,10 @@ if __name__ == "__main__":
         num_questions = int(input("Number of Questions:"))
         if num_questions == -1:
             break
-            
+
+        with open(file_path,'a') as f:
+            f.write(f"Subject : {subject}\nDifficulty: {difficulty}\n\n")
+        
         # Defining HuggingFace Pipeline
         # TODO : Put generation parameters in config
         pipe = pipeline("text-generation", 
@@ -128,7 +104,7 @@ if __name__ == "__main__":
         )
         #memory = ConversationSummaryMemory(llm=hf, input_key='subject')
         #memory = ConversationBufferWindowMemory(k=MEMORY_BUFFER, memory_key="chat_history", input_key='subject')
-        memory = ConversationBufferMemory(k=MEMORY_BUFFER, memory_key="chat_history", input_key='subject')
+        memory = ConversationBufferMemory(k=memory_buffer, memory_key="chat_history", input_key='subject')
     
         # Creating Chain 
         prompt_template = PromptTemplate.from_template(template)
@@ -138,35 +114,43 @@ if __name__ == "__main__":
                     memory=memory,
                     verbose=False
                 )
+        chat_history_list = []
+        chat_history_str = ''
 
+        
         quiz = []
-        input_dict = {
-            "difficulty" : difficulty,
-            "subject" : subject,
-            "format_instructions" : format_instructions
-        }
-
         question_num = 1
         retry = 0
         while question_num <=num_questions:
             try:
-                gen_ques = llm_chain.run(input_dict)
-                print(gen_ques)
+                input_dict = {
+                        "difficulty" : difficulty,
+                        "subject" : subject,
+                        "format_instructions" : format_instructions,
+                        "chat_history" : chat_history_str
+                }
+                logger.info(f"Generating Question Number : {question_num}")
+                logger.info(f"Current History : {chat_history_str}")
+                gen_ques = llm_chain.invoke(input_dict).get('text')
                 gen_ques = output_parser.parse(gen_ques)
-                print(f"Question Number : {question_num} Done")
-                question_num+=1
-                quiz.append(gen_ques)
+
+                question = gen_ques["Question"]
+                if question not in chat_history_list:
+                    chat_history_list.append(question)
+                    chat_history_str+=f"{question}\n"
+                    question_num+=1
+                    quiz.append(gen_ques)
                 retry=0
             except Exception as e:
-                print(f"Failed to Generate Question Number : {question_num}")
-                print("Retrying")
+                logger.info(f"Error: {e}")
+                logger.info(f"Failed to Generate Question Number : {question_num}. Retrying.......")
                 retry+=1
-
                 if retry == 3:
-                    print("Error Occured! Stopping")
+                    logger.info("Error Occured! Stopping")
                     break
         if mode == 'teacher':
-            print_quiz(quiz)
+            #print_quiz(quiz)
+            write_quiz_to_file(quiz, file_path)
             
             
 

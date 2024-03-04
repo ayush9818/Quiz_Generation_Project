@@ -3,6 +3,7 @@ from langchain.output_parsers import StructuredOutputParser, CommaSeparatedListO
 import json
 import re
 import sys
+from loguru import logger
 
 def print_quiz(quiz):
     for question in quiz:
@@ -42,6 +43,20 @@ def initialize_parser(response_schemas):
     format_instructions = output_parser.get_format_instructions()
     return output_parser, format_instructions
 
+
+def write_quiz_to_file(quiz, file_path):
+    logger.info(f"Writing Quiz to {file_path}")
+    with open(file_path,'a') as f:
+        for num, question in enumerate(quiz):
+            f.write(f"Question {num+1}:{question.get('Question')}\n")
+            f.write(f"Choice1:{question.get('Choice1')}\n")
+            f.write(f"Choice2:{question.get('Choice2')}\n")
+            f.write(f"Choice3:{question.get('Choice3')}\n")
+            f.write(f"Choice4:{question.get('Choice4')}\n")
+            f.write(f"Answer:{question.get('Answer')}\n")
+            f.write(f"Explanation:{question.get('Explanation')}")
+            f.write("\n\n")
+            
 
 
 class Memory:

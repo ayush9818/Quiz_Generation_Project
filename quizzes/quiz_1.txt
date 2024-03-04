@@ -1,0 +1,43 @@
+Subject : Supply Chain Management
+Difficulty: Easy
+
+Question 0:In which scenario would a company prefer to use a Just-In-Time (JIT) inventory system?
+Choice1:When the demand for its products is highly unpredictable and fluctuates frequently
+Choice2:When it has a large inventory of raw materials and finished goods
+Choice3:When it operates in a volatile market with frequent price changes for raw materials
+Choice4:When it has a long lead time for procurement of raw materials
+Answer:Choice1
+Explanation:A JIT inventory system is best suited for situations where demand is unpredictable and fluctuates frequently, as it allows the company to order and receive inventory only when it is needed, reducing inventory holding costs and improving efficiency.
+
+Question 1:Which of the following supply chain management strategies is best suited for a company that wants to reduce its carbon footprint?
+Choice1:Just-In-Time (JIT)
+Choice2:Make-to-Order (MTO)
+Choice3:Make-to-Stock (MTS)
+Choice4:Vendor Managed Inventory (VMI)
+Answer:Choice3: Make-to-Stock (MTS)
+Explanation:Make-to-Stock (MTS) strategy involves manufacturing and stocking inventory based on forecasted demand. This strategy can help a company reduce its carbon footprint by optimizing production runs and reducing the number of transportation trips required to move inventory between different locations.
+
+Question 2:Which of the following supply chain management strategies is best suited for a company that wants to minimize its transportation costs?
+Choice1:Just-In-Time (JIT)
+Choice2:Make-to-Order (MTO)
+Choice3:Vendor Managed Inventory (VMI)
+Choice4:Make-to-Stock (MTS)
+Answer:Choice4: Make-to-Stock (MTS)
+Explanation:Make-to-Stock (MTS) strategy involves manufacturing and stocking inventory based on forecasted demand. This strategy can help a company minimize its transportation costs by optimizing production runs and reducing the number of transportation trips required to move inventory between different locations.
+
+Question 3:A company sources raw materials from two different suppliers. Supplier A charges a fixed cost of $100 per unit and a variable cost of $50 per unit. Supplier B charges a fixed cost of $80 per unit and a variable cost of $30 per unit. The company purchases 100 units from each supplier. Which supplier offers a lower total cost per unit?
+Choice1:Supplier A
+Choice2:Supplier B
+Choice3:Both suppliers offer the same total cost per unit
+Choice4:It is impossible to determine the total cost per unit based on the given information
+Answer:Choice2: Supplier B
+Explanation:To find the total cost per unit for each supplier, we need to calculate the fixed cost and variable cost for 100 units for each supplier. For Supplier A, the total cost would be $100 (fixed cost) + ($50 * 100) (variable cost) = $6500 + $5000 = $11,500. For Supplier B, the total cost would be $80 (fixed cost) + ($30 * 100) (variable cost) = $80 + $3,000 = $3,080. Therefore, Supplier B offers a lower total cost per unit ($3,080) compared to Supplier A ($11,500).
+
+Question 4:A company has two suppliers for a raw material. Supplier A charges a fixed cost of $50 per unit and a variable cost of $10 per unit. Supplier B charges a fixed cost of $80 per unit and a variable cost of $5 per unit. The company purchases 200 units from each supplier. Which supplier offers a lower total cost per unit?
+Choice1:Supplier A, with a total cost of $11,000
+Choice2:Supplier B, with a total cost of $10,500
+Choice3:Both suppliers offer the same total cost per unit, which is $10,500
+Choice4:It is impossible to determine the total cost per unit based on the given information
+Answer:Choice2: Supplier B
+Explanation:To find the total cost per unit for each supplier, we need to calculate the fixed cost and variable cost for 200 units for each supplier. For Supplier A, the total cost would be $50 (fixed cost) + ($10 * 200) (variable cost) = $50 + $2,000 = $2,050 per unit. For Supplier B, the total cost would be $80 (fixed cost) + ($5 * 200) (variable cost) = $80 + $1,000 = $1,880 per unit. Therefore, Supplier B offers a lower total cost per unit ($1,880) compared to Supplier A ($2,050).
+
