@@ -1,0 +1,57 @@
+Subject : Negotiation Theory
+Difficulty: Easy
+
+Question 1:In a negotiation scenario, a salesperson is trying to close a deal with a potential customer. The customer expresses a desire for a discount of 20% on the listed price of a product. The salesperson responds by offering a discount of 15%. Which negotiation strategy is the salesperson employing?
+Choice1:Competing
+Choice2:Collaborating
+Choice3:Accommodating
+Choice4:Compromising
+Answer:Choice1
+Original Answer:Competing
+Explanation:The salesperson is trying to maintain the highest possible price for the product, which is a competing strategy.
+
+Question 2:In a business negotiation, a supplier proposes a price of $100 per unit for a product. The buyer wants to pay $80 per unit. The supplier then counters with a price of $90 per unit. Which negotiation strategy is the supplier employing?
+Choice1:Competing
+Choice2:Collaborating
+Choice3:Accommodating
+Choice4:Compromising
+Answer:Choice1
+Original Answer:Competing
+Explanation:The supplier is trying to maximize its own interests at the expense of the buyer, which is the definition of a competing strategy.
+
+Question 3:In a negotiation scenario, a company is trying to sell a software license to a potential customer. The customer values the software at $5,000, but the company values it at $7,000. The company proposes a price of $6,500. Which negotiation strategy is the company employing?
+Choice1:Competing
+Choice2:Collaborating
+Choice3:Compromising
+Choice4:Accommodating
+Answer:Choice3
+Original Answer:Compromising
+Explanation:The company is proposing a price midway between its own valuation and the customer's valuation, indicating a willingness to compromise.
+
+Question 4:In a negotiation scenario, a buyer and a seller are negotiating the price of a car. The buyer offers a price of $12,000, and the seller counters with a price of $15,000. The buyer then makes a new offer of $13,500. Which negotiation strategy is the buyer employing?
+Choice1:Competing
+Choice2:Collaborating
+Choice3:Accommodating
+Choice4:Avoiding
+Answer:Choice1
+Original Answer:Competing
+Explanation:The buyer is trying to reach an agreement by proposing a lower price than the seller's initial offer, which is a competing strategy.
+
+Question 5:In a negotiation scenario, a buyer and a seller are negotiating the price of a commodity. The seller initially quotes a price of $50 per unit, and the buyer offers a price of $45 per unit. The seller then proposes a price of $48 per unit. Which negotiation strategy is the seller employing?
+Choice1:Competing
+Choice2:Collaborating
+Choice3:Accommodating
+Choice4:Avoiding
+Answer:Choice1
+Original Answer:Competing
+Explanation:The seller is trying to maximize their profit, which is a characteristic of competing strategy.
+
+Question 6:In a negotiation scenario, a buyer and a seller are negotiating the price of a house. The seller initially quotes a price of $500,000, and the buyer offers a price of $450,000. The seller then proposes a price of $475,000. Which negotiation strategy is the seller employing?
+Choice1:Competing
+Choice2:Collaborating
+Choice3:Accommodating
+Choice4:Compromising
+Answer:Choice1
+Original Answer:Choice1
+Explanation:The seller is trying to maximize their gain, which is the definition of a competing strategy.
+

@@ -1,0 +1,39 @@
+Subject : A/B Testing
+Difficulty: 4
+
+Question 1:In an A/B test, a company compares two versions of a webpage to determine which one converts visitors to customers more effectively. Version A had a conversion rate of 2.5%, while Version B had a conversion rate of 3.2%. Assuming a 95% confidence level and a 5% margin of error, which version of the webpage should the company implement?
+Choice1:Version A
+Choice2:Version B
+Choice3:Both versions equally
+Choice4:It's impossible to determine
+Answer:Choice2
+Original Answer:Choice2
+Explanation:To calculate the required sample size for a given confidence level and margin of error, we can use the formula: n = (Z^2 * p * (1-p)) / E^2. Here, Z is the Z-score for the given confidence level, p is the smaller conversion rate, and E is the margin of error. In this case, Z = 1.96 (for a 95% confidence level), p = 0.025 (for Version A), and E = 0.01 (for a 5% margin of error). Calculating the sample size, we find that the required sample size for Version A is approximately 13,000 visitors, while for Version B, it's around 10,000 visitors. Since Version B requires fewer visitors to reach the same level of confidence, it's the better choice.
+
+Question 2:In an A/B test, a company compares two versions of a mobile app's landing page to determine which one results in more downloads. Version A had an average download rate of 15 downloads per hour, while Version B had an average download rate of 18 downloads per hour. Assuming a 95% confidence level and a 5% margin of error, which version of the landing page should the company implement to maximize the number of downloads?
+Choice1:Version A
+Choice2:Version B
+Choice3:Both versions equally
+Choice4:It is not possible to determine based on the given data
+Answer:Choice4
+Original Answer:It is not possible to determine based on the given data
+Explanation:To determine which version of the landing page to implement, we need to calculate the required sample size to achieve the desired confidence level and margin of error. Based on the given data, it is not possible to determine if the difference in download rates is statistically significant.
+
+Question 3:In an A/B test, a company compares two versions of a website's checkout page to determine which one results in a higher average order value. Version A had an average order value of $150, while Version B had an average order value of $175. Assuming a 99% confidence level and a 2% margin of error, which version of the checkout page should the company implement to maximize the revenue?
+Choice1:Version A
+Choice2:Version B
+Choice3:A new version C with an average order value of $160
+Choice4:A new version D with an average order value of $180
+Answer:Choice2
+Original Answer:Version B
+Explanation:To calculate the required sample size for a given confidence level and margin of error, we can use the following formula: n = (Z^2 * σ^2) / (E^2). Here, Z is the Z-score corresponding to the given confidence level, σ is the standard deviation, and E is the margin of error. For 99% confidence level and 2% margin of error, Z = 2.801 and σ = $25 (assuming a normal distribution and a standard deviation of $25 for average order values). Plugging these values into the formula, we get n = 384. Since the sample sizes for both versions A and B are not given, we cannot determine which version has a larger sample size. However, based on the given information, Version B has a higher average order value, which, assuming a larger sample size, would result in a higher revenue. Therefore, the company should implement Version B to maximize the revenue.
+
+Question 4:In an A/B test, a company compares two versions of a mobile app's onboarding process to determine which one results in a higher user retention rate. Version A had a retention rate of 35% after 30 days, while Version B had a retention rate of 42% after 60 days. Assuming a 99% confidence level and a 1% margin of error, which version of the onboarding process should the company implement to maximize the long-term user engagement?
+Choice1:Version A with a retention rate of 35% after 30 days
+Choice2:Version B with a retention rate of 42% after 60 days
+Choice3:Version A with a retention rate of 35% after 60 days
+Choice4:Version B with a retention rate of 35% after 30 days
+Answer:Choice2
+Original Answer:Choice2: Version B with a retention rate of 42% after 60 days
+Explanation:To maximize the long-term user engagement, the company should implement the version of the onboarding process with the higher retention rate. In this case, Version B has a higher retention rate of 42% after 60 days compared to Version A's retention rate of 35% after 30 days.
+

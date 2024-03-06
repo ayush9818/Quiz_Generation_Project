@@ -1,0 +1,39 @@
+Subject : Wind Turbines Theory
+Difficulty: 2
+
+Question 1:Given a wind turbine with a rated power of 2 MW and a cut-in wind speed of 8 m/s, what is the theoretical maximum power that can be extracted from a wind stream with a velocity of 12 m/s?
+Choice1:0.5 MW
+Choice2:1.2 MW
+Choice3:1.5 MW
+Choice4:2.5 MW
+Answer:1.2 MW
+Original Answer:1.2 MW
+Explanation:The maximum power that can be extracted from a wind stream with a velocity of 12 m/s is 1.2 MW.
+
+Question 2:Given a wind turbine with a rated power of 3 MW and a cut-in wind speed of 9 m/s, what is the optimal rotational speed (RPM) for maximum power extraction when the wind speed is 15 m/s? Assume the power coefficient (Cp) of the wind turbine is a constant value of 0.45.
+Choice1:150 RPM
+Choice2:200 RPM
+Choice3:250 RPM
+Choice4:300 RPM
+Answer:Choice3
+Original Answer:Choice3
+Explanation:The optimal rotational speed for maximum power extraction (Rpm_opt) can be calculated using the Betz limit equation: Rpm_opt = (2 * pi * (36 / (2 * pi)) * sqrt((P_rated / (0.5 * 1.225 * pi * (36 / (2 * pi))^2 * Cd * Cp)))). Here, P_rated = 3 MW, Cp = 0.45, and air density (ρ) is assumed to be 1.225 kg/m^3. By calculating the Rpm_opt value, we find that it is closest to Choice3.
+
+Question 3:A wind turbine with a rated power of 5 MW and a cut-in wind speed of 10 m/s is designed to operate in a wind farm located at an altitude of 2000 meters above sea level. The air density at this altitude is approximately 1.18 kg/m³. Assuming the power coefficient (Cp) of the wind turbine is a constant value of 0.45, calculate the theoretical maximum power that can be extracted from the wind stream when the wind speed is 18 m/s.
+Choice1:1.5 MW
+Choice2:3.75 MW
+Choice3:5 MW
+Choice4:7.2 MW
+Answer:3.75 MW
+Original Answer:Choice2: 3.75 MW
+Explanation:The theoretical maximum power that can be extracted from the wind stream when the wind speed is 18 m/s is calculated to be 3.75 MW.
+
+Question 4:A wind turbine with a rated power of 1.5 MW and a cut-in wind speed of 7 m/s is designed to operate in a coastal area where the wind speed follows a Weibull distribution with a shape factor of 2.5 and a scale factor of 10 m/s. Assuming the power coefficient (Cp) of the wind turbine is a constant value of 0.4, calculate the expected annual energy production (AEP) of the wind turbine.
+Choice1:1000 MWh
+Choice2:1500 MWh
+Choice3:2000 MWh
+Choice4:2500 MWh
+Answer:Choice3
+Original Answer:Choice3: 2000 MWh
+Explanation:The expected annual energy production (AEP) of a wind turbine can be calculated using the following formula: AEP = (8760 hours/year * Cp * ρ * A * (k / (k + λ)^2)) where ρ is the air density, A is the swept area of the wind turbine, k is the shape factor of the Weibull distribution, and λ is the scale factor of the Weibull distribution. Given the values in the question, we can calculate the AEP and find that it is closest to 2000 MWh.
+

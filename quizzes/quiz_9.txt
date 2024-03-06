@@ -1,0 +1,30 @@
+Subject : Graph Mining Theory 
+Difficulty: Easy
+
+Question 1:In the context of graph mining, which algorithm is used to discover frequent itemsets in a given dataset?
+Choice1:Apriori Algorithm
+Choice2:PageRank Algorithm
+Choice3:Breadth-First Search Algorithm
+Choice4:Depth-First Search Algorithm
+Answer:Choice1
+Original Answer:Choice1
+Explanation:The Apriori Algorithm is used for discovering frequent itemsets in a given dataset. It is based on the Apriori property, which states that if an itemset is frequent, then all its subsets must also be frequent. This algorithm is widely used in association rule mining and market basket analysis.
+
+Question 2:In the context of graph mining, which algorithm is used to find the shortest path between two nodes in a weighted graph?
+Choice1:Apriori Algorithm
+Choice2:Breadth-First Search (BFS)
+Choice3:Depth-First Search (DFS)
+Choice4:PageRank Algorithm
+Answer:Choice2
+Original Answer:Breadth-First Search (BFS)
+Explanation:Breadth-First Search (BFS) is a graph traversal algorithm that explores all the vertices reachable from a given source vertex in a breadthward direction before moving on to vertices that are reachable from the previously traversed vertices. It is used to find the shortest path between two nodes in an unweighted graph. In contrast, Dijkstra's Algorithm is used for finding the shortest path in a weighted graph.
+
+Question 3:In the context of graph mining, which real-world scenario can be modeled as a bipartite graph?
+Choice1:A social network where users can follow each other
+Choice2:A road network where cars can travel between cities
+Choice3:A financial transaction network where buyers and sellers interact
+Choice4:A webpage network where webpages link to each other
+Answer:Choice1
+Original Answer:Choice1
+Explanation:A social network can be modeled as a bipartite graph, where one set of nodes represents users and the other set represents features or actions. Users are connected to features or actions by edges.
+

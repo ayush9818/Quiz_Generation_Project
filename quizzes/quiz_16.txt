@@ -1,0 +1,39 @@
+Subject : Cloud Engineering Theory
+Difficulty: 3
+
+Question 1:Consider a cloud-native application deployed on AWS Elastic Kubernetes Service (EKS). The application consists of multiple microservices communicating with each other using REST APIs. Which AWS service should be used to ensure secure communication between these microservices?
+Choice1:Amazon S3
+Choice2:Amazon API Gateway
+Choice3:Amazon DynamoDB
+Choice4:Amazon SQS
+Answer:Choice2
+Original Answer:Choice2
+Explanation:Amazon API Gateway acts as an entry point for REST APIs and provides security features such as SSL/TLS encryption, IAM authentication, and rate limiting. It is commonly used to secure communication between microservices in a cloud-native application.
+
+Question 2:Consider a large-scale data processing pipeline using Apache Hadoop and Apache Spark on AWS EMR (Elastic MapReduce). The pipeline consists of multiple MapReduce jobs and Spark Streaming jobs. To optimize the performance of the pipeline, which of the following AWS services should be used?
+Choice1:AWS Lambda
+Choice2:AWS Glue
+Choice3:AWS DynamoDB
+Choice4:AWS S3
+Answer:Choice2
+Original Answer:Choice2
+Explanation:AWS Glue is a fully managed extract, transform, and load (ETL) service that makes it easy to prepare and load data for analytics. It can automatically discover, classify, and catalog your data, and it integrates with various data stores, including S3 and EMR.
+
+Question 3:Consider a cloud-based data analytics platform using Apache Hive and Apache Pig on Amazon EMR. The platform is designed to process large volumes of data from various sources, including structured and semi-structured data. To optimize the performance of the platform, which of the following AWS services should be used for data storage?
+Choice1:Amazon S3
+Choice2:Amazon DynamoDB
+Choice3:Amazon Redshift
+Choice4:Amazon ElastiCache
+Answer:Choice1
+Original Answer:Choice1
+Explanation:Amazon S3 is a scalable, durable, and cost-effective object storage service that is often used for storing large amounts of data in the cloud. It is well-suited for use with Apache Hive and Apache Pig, which are designed to work with data stored in Hadoop Distributed File System (HDFS) or other Hadoop-compatible file systems, such as Amazon S3.
+
+Question 4:In a cloud-based image recognition system, which machine learning algorithm would be most suitable for feature extraction from raw image data?
+Choice1:Naive Bayes
+Choice2:Random Forest
+Choice3:Support Vector Machines (SVM)
+Choice4:Principal Component Analysis (PCA)
+Answer:Choice4
+Original Answer:Choice4
+Explanation:Principal Component Analysis (PCA) is a dimensionality reduction technique that can be used for feature extraction from raw image data. It transforms the data into a new coordinate system such that the greatest variance of the data occurs in the first principal component, the second greatest variance in the second principal component, and so on.
+

@@ -40,21 +40,19 @@ def initialize_response_schemas():
     return response_schemas
 
 
+
 def retrieve_choice(choice_list, query):
     model_kwargs = {'device': 'cpu'}
     db = Chroma.from_texts(choice_list, HuggingFaceBgeEmbeddings(model_kwargs=model_kwargs))
     return db.similarity_search(query)[0].page_content.split(':')[0]
 
 
-def align_answers(quiz):
-    aligned_quiz = []
-    for question in quiz:
-        choice_list = [f"{key}:{value}" for key,value in question.items() if 'choice' in key.lower()]
-        query = f"Answer:{question['Answer']}"
-        question['Original Answer'] = question['Answer']
-        question['Answer'] = retrieve_choice(choice_list, query)
-        aligned_quiz.append(question)
-    return aligned_quiz
+def align_answer(question):
+    choice_list = [f"{key}:{value}" for key,value in question.items() if 'choice' in key.lower()]
+    query = f"Answer:{question['Answer']}"
+    question['Original Answer'] = question['Answer']
+    question['Answer'] = retrieve_choice(choice_list, query)
+    return question
     
 def initialize_parser(response_schemas):
     """Initialise output parser and create format instructions for LLM"""

@@ -1,0 +1,43 @@
+Subject : Association Rules Theoritical Concepts
+Difficulty: Easy
+
+Question 1:Given a large retail dataset, which association rule would you apply to find out which products are frequently bought together?
+Choice1:Apriori Algorithm with a minimum support of 0.5 and a minimum confidence of 0.7
+Choice2:Frequent Itemset Mining with a minimum support of 0.3 and a minimum confidence of 0.8
+Choice3:Eclat Algorithm with a minimum support of 0.4 and a minimum confidence of 0.6
+Choice4:MineSet Algorithm with a minimum support of 0.2 and a minimum confidence of 0.9
+Answer:Choice1
+Explanation:Apriori Algorithm is used to find frequent itemsets and association rules in large datasets. The minimum support and minimum confidence thresholds are used to filter out infrequent itemsets and weak association rules. In this question, the applicant is asked to find out which products are frequently bought together, which is exactly what Apriori Algorithm does.
+
+Question 2:Given a market basket dataset, which association rule would you apply to find out which products have a strong positive correlation and a minimum support count of 10%?
+Choice1:Apriori Algorithm with a minimum confidence level of 50%
+Choice2:Eclat Algorithm with a minimum confidence level of 70%
+Choice3:Frequent Pattern Growth Algorithm with a minimum confidence level of 60%
+Choice4:Association Rule Mining Algorithm with a minimum confidence level of 80%
+Answer:Choice 2: Eclat Algorithm with a minimum confidence level of 70%
+Explanation:The Eclat algorithm is known for its efficiency in mining frequent itemsets and association rules, especially when dealing with large datasets. It uses a different approach than Apriori, which focuses on generating frequent itemsets first and then generating rules from them. Eclat does not require the generation of large candidate itemsets, making it more suitable for large datasets. However, it may not be as effective in handling noisy data as Apriori. The minimum confidence level of 70% is a common choice to ensure that the generated rules have a strong positive correlation.
+
+Question 3:In Apriori Algorithm, which step is responsible for generating frequent itemsets?
+Choice1:Step 1: Frequent Itemset Generation
+Choice2:Step 2: Association Rule Generation
+Choice3:Step 3: Candidate Generation
+Choice4:Step 4: Pruning
+Answer:Choice 1: Step 1: Frequent Itemset Generation
+Explanation:The Apriori Algorithm generates frequent itemsets in the first step using the minimum support count. These frequent itemsets are then used to generate association rules in the next step.
+
+Question 4:Given a retail dataset, which association rule would you apply to find out which products have a strong negative correlation and a minimum support count of 5%?
+Choice1:Apriori Algorithm with Minimum Support count of 5% and Confidence threshold of 0.8
+Choice2:Eclat Algorithm with Minimum Support count of 5% and Confidence threshold of 0.8
+Choice3:Frequent Pattern Growth Algorithm with Minimum Support count of 5% and Confidence threshold of 0.8
+Choice4:Markov Model with Minimum Support count of 5% and Confidence threshold of 0.8
+Answer:Choice 2: Eclat Algorithm
+Explanation:Eclat Algorithm is used to find frequent itemsets and association rules with negative correlation.
+
+Question 5:In the context of Apriori Algorithm, which data structure is used to store the frequent itemsets?
+Choice1:Frequent Itemset Tree
+Choice2:Frequent Itemset List
+Choice3:Association Rule Tree
+Choice4:Apriori Table
+Answer:Frequent Itemset List
+Explanation:Frequent itemsets are stored in a list for further processing in the Apriori Algorithm.
+

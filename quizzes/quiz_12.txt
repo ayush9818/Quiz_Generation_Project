@@ -1,0 +1,39 @@
+Subject : A/B Testing
+Difficulty: 2
+
+Question 1:In an A/B test, a company compares the conversion rate of two versions of a webpage. Version A has a conversion rate of 5% and a bounce rate of 30%. Version B has a conversion rate of 7% and a bounce rate of 25%. Based on these statistics, which version of the webpage is more likely to have a higher average time on page?
+Choice1:Version A
+Choice2:Version B
+Choice3:Both versions have the same average time on page
+Choice4:Insufficient data to determine
+Answer:Choice4
+Original Answer:Insufficient data to determine
+Explanation:The average time on page cannot be determined solely from the conversion rate and bounce rate data provided.
+
+Question 2:In an A/B test, two versions of a website are compared to determine which one converts better. Version A has a conversion rate of 12% and a bounce rate of 40%. Version B has a conversion rate of 15% and a bounce rate of 35%. Based on these statistics, which version of the website is more likely to have a lower average session duration?
+Choice1:Version A
+Choice2:Version B
+Choice3:Both versions have the same average session duration
+Choice4:Insufficient data to determine
+Answer:Choice3
+Original Answer:Choice3: Both versions have the same average session duration
+Explanation:Average session duration is calculated by dividing the total time spent on the site by the number of sessions. Since both versions have the same conversion rate, the total time spent on each version is proportional to the number of visitors. Therefore, if the number of visitors is the same for both versions, they will have the same average session duration.
+
+Question 3:In an A/B test, two versions of a website are compared to determine which one converts better. Version A has a conversion rate of 20% and a bounce rate of 50%. Version B has a conversion rate of 15% and a bounce rate of 30%. Based on these statistics, which version of the website is more likely to have a higher average session duration?
+Choice1:Version A
+Choice2:Version B
+Choice3:Both versions have the same average session duration
+Choice4:Data is insufficient to determine the average session duration
+Answer:Choice4
+Original Answer:Choice3 or Choice4
+Explanation:To determine which version of the website has a higher average session duration, we need to calculate the average session duration for each version. However, the given statistics do not provide enough information to calculate the average session duration directly. We would need to know the average time on page or average number of pages visited per session for each version. Therefore, choices 1 and 2 are incorrect, and choices 3 and 4 are possible answers depending on whether we assume that the average session duration is directly related to the bounce rate or not.
+
+Question 4:In an A/B test, two versions of a website are compared to determine which one converts better. Version A has a conversion rate of 35% and a bounce rate of 15%. Version B has a confidence level of 95% and a statistical significance level of 0.05. Based on these statistics, which version of the website is more likely to have a significantly higher conversion rate?
+Choice1:Version A
+Choice2:Version B
+Choice3:Both versions have the same conversion rate
+Choice4:It's impossible to determine based on the given information
+Answer:Choice4
+Original Answer:It's impossible to determine based on the given information
+Explanation:The confidence level and statistical significance level of Version B do not provide enough information to determine if Version B has a significantly higher conversion rate compared to Version A.
+
